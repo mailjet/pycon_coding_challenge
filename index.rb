@@ -15,9 +15,15 @@ get "/" do
 end
 
 post "/coding_challenge" do
+  ##determine coding challenge variant (method)
   erb :coding_challenge
 end
 
 post "/save" do
   redirect to("/")
+end
+
+def determine_coding_challenge_variant
+  array = 100.times.map{Random.rand(100)}
+  return coding_challenge_variant
 end
