@@ -8,3 +8,16 @@ require 'sinatra/activerecord'
 # require './environments'
 require 'bcrypt'
 require 'htmlentities'
+require "rubypython"
+
+get "/" do
+  erb :start
+end
+
+post "/coding_challenge" do
+  erb :coding_challenge
+end
+
+post "/save" do
+  redirect to("/")
+end
