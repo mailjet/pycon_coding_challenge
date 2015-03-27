@@ -1,0 +1,10 @@
+require 'sinatra'
+require 'httmultiparty'
+require 'debugger' if Sinatra::Base.development?
+require 'open-uri'
+require 'dotenv'
+require 'active_record'
+require 'sinatra/activerecord'
+# require './environments'
+require 'bcrypt'
+require 'htmlentities'
