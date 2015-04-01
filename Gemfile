@@ -7,6 +7,7 @@ gem "sinatra-activerecord"
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 gem 'rake'
+gem 'dotenv'
 
 gem 'bcrypt-ruby'
 gem 'htmlentities'

@@ -10,12 +10,17 @@ require 'bcrypt'
 require 'htmlentities'
 require "rubypython"
 
+set :port, 4567
+Dotenv.load
+
 get "/" do
   erb :start
 end
 
 post "/coding_challenge" do
   ##determine coding challenge variant (method)
+  debugger
+  debugger
   erb :coding_challenge
 end
 
