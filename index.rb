@@ -12,6 +12,10 @@ require 'htmlentities'
 set :port, 4567
 Dotenv.load
 
+class PyconCodingChallenge < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+end
+
 class Coder < ActiveRecord::Base
   serialize :array
   validates_presence_of :name
