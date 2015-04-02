@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 20150401155442) do
     t.string  "company"
     t.string  "position"
     t.text    "array"
-    t.string  "answer"
+    t.integer "divisor"
+    t.integer "answer"
     t.boolean "is_correct"
     t.string  "time"
   end
