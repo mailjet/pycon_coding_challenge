@@ -1,0 +1,25 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/main.css"></style>
+</head>
+
+<div id="content">
+  <section id="challenge">
+    <form action="/save/<%= @coder.id %>" method="post">
+      <div class="row text-center">
+        <div class="col-xs-6 col-xs-offset-3">
+          <input type="text" class="form-control" name="answer" size="30" placeholder="Your answer here">
+        </div>
+      </div>
+      <br />
+      <div class="row text-center">
+        <div class="col-xs-6 col-xs-offset-3">
+          <input class="btn btn-default" type="submit" value="Submit">
+        </div>
+      </div>
+    </form>
+  </section>
+</div>
