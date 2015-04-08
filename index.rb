@@ -52,7 +52,7 @@ end
 
 def determine_coding_challenge_variant
   array = 100.times.map{Random.rand(1..500)}
-  divisor = Random.rand(3...12)
+  divisor = Random.rand(3...9)
   return {array: array, divisor: divisor}
 end
 
