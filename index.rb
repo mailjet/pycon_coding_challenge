@@ -43,28 +43,33 @@ end
 #save the results
 post "/save/:id" do
   @coder = Coder.find(params[:id])
-  answer = params[:answer].to_i
-  @coder.update_attributes(answer: params[:answer], is_correct: is_correct(@coder.array, @coder.divisor, answer), time: params[:time])
+  is_correct_hash = is_correct(@coder.array, @coder.divisor, params[:their_answer])
+  @coder.update_attributes(their_answer: params[:their_answer], correct_answer: is_correct_hash[:correct_answer], is_correct: is_correct_hash[:is_correct], time: params[:time])
   redirect to("/")
 end
 
 #------------------------------------------------------------------------
 
 def determine_coding_challenge_variant
-  array = 100.times.map{Random.rand(100)}
-  divisor = Random.rand(1...10)
+  array = 100.times.map{Random.rand(1..500)}
+  divisor = Random.rand(3...12)
   return {array: array, divisor: divisor}
 end
 
 #method will change depending on challenge
 def is_correct(array, divisor, answer)
+  is_correct_hash = {}
   correct_array = []
   array.each do |elem|
-    correct_array << elem if elem % divisor == 1
+    correct_array << elem if elem % divisor == 0
   end
-  if correct_array.length == answer
-    return true
+  is_correct_hash[:correct_answer] = correct_array.length
+  debugger
+  debugger
+  if correct_array.length == answer.to_i
+    is_correct_hash[:is_correct] = true
   else
-    return false
+    is_correct_hash[:is_correct] = false
   end
+  return is_correct_hash
 end

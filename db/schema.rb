@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20150401155442) do
     t.string  "position"
     t.text    "array"
     t.integer "divisor"
-    t.integer "answer"
+    t.integer "their_answer"
+    t.integer "correct_answer"
     t.boolean "is_correct"
     t.string  "time"
   end

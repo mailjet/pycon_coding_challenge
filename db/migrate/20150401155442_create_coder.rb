@@ -7,7 +7,8 @@ class CreateCoder < ActiveRecord::Migration
       t.string :position
       t.text :array
       t.integer :divisor
-      t.integer :answer
+      t.integer :their_answer
+      t.integer :correct_answer
       t.boolean :is_correct
       t.string :time
 
