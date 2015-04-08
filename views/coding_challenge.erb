@@ -7,6 +7,16 @@
 </head>
 
 <div id="content">
+  <section id="prompt">
+    <p>
+      Given the following array:
+    </p>
+    <%= @coder.array %>
+    <p>
+      How many numbers in this array are divisible by <b><%= @coder.divisor %></b>
+    </p>
+  </section>
+
   <section id="challenge">
     <form action="/save/<%= @coder.id %>" method="post">
       <div class="row text-center">
