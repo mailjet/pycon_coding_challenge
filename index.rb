@@ -64,8 +64,6 @@ def is_correct(array, divisor, answer)
     correct_array << elem if elem % divisor == 0
   end
   is_correct_hash[:correct_answer] = correct_array.length
-  debugger
-  debugger
   if correct_array.length == answer.to_i
     is_correct_hash[:is_correct] = true
   else
