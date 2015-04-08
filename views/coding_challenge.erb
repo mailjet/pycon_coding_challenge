@@ -11,6 +11,12 @@
     <form action="/save/<%= @coder.id %>" method="post">
       <div class="row text-center">
         <div class="col-xs-6 col-xs-offset-3">
+          <input type="text" class="form-control" name="time" size="30" placeholder="0">
+        </div>
+      </div>
+      <br />
+      <div class="row text-center">
+        <div class="col-xs-6 col-xs-offset-3">
           <input type="text" class="form-control" name="answer" size="30" placeholder="Your answer here">
         </div>
       </div>
@@ -23,3 +29,37 @@
     </form>
   </section>
 </div>
+
+<script>
+handler = function() {
+
+  // document.getElementsByName('time')[0].value="moo";
+
+
+  var time = document.getElementsByName('time')[0],
+  seconds = 0, minutes = 0, hours = 0,
+  t;
+
+  function add() {
+    seconds++;
+    if (seconds >= 60) {
+      seconds = 0;
+      minutes++;
+      if (minutes >= 60) {
+        minutes = 0;
+        hours++;
+      }
+    }
+
+    time.value = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+  }
+  function timer() {
+    t = setTimeout(add, 1000);
+  }
+  timer();
+
+}
+$(document).ready(handler);
+</script>
