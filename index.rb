@@ -42,8 +42,6 @@ end
 
 #save the results
 post "/save/:id" do
-  debugger
-  debugger
   @coder = Coder.find(params[:id])
   answer = params[:answer].to_i
   @coder.update_attributes(answer: params[:answer], is_correct: is_correct(@coder.array, @coder.divisor, answer), time: params[:time])
