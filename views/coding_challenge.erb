@@ -65,29 +65,42 @@ p {
 
 <script>
 handler = function() {
-  var time = document.getElementsByName('time')[0],
-  hundredths = 0, seconds = 0, minutes = 0, hours = 0,
-  t;
+  var time = document.getElementsByName('time')[0]
 
-  function add() {
-    seconds++;
-    if (seconds >= 100) {
-      seconds = 0;
-      minutes++;
-      if (minutes >= 60) {
-        minutes = 0;
-        hours++;
-      }
-    }
+   var delay = 10;
+   var now, before = new Date();
+   var t = 0;
 
-    time.value = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00")  + ":" + (seconds > 9 ? seconds : "0" + seconds) ;
 
-    timer();
-  }
-  function timer() {
-    t = setTimeout(add, 10);
-  }
-  timer();
+   setInterval(function() {
+       now = new Date();
+       var elapsedTime = (now.getTime() - before.getTime());
+       before = new Date();
+       t += elapsedTime;
+       time.value = (t/1000);
+   }, delay);
+  // hundredths = 0, seconds = 0, minutes = 0, hours = 0,
+  // t;
+  //
+  // function add() {
+  //   seconds++;
+  //   if (seconds >= 100) {
+  //     seconds = 0;
+  //     minutes++;
+  //     if (minutes >= 60) {
+  //       minutes = 0;
+  //       hours++;
+  //     }
+  //   }
+  //
+  //   time.value = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00")  + ":" + (seconds > 9 ? seconds : "0" + seconds) ;
+  //
+  //   timer();
+  // }
+  // function timer() {
+  //   t = setTimeout(add, 10);
+  // }
+  // timer();
 
 }
 $(document).ready(handler);
