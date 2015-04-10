@@ -6,15 +6,38 @@
 <link rel="stylesheet" type="text/css" href="./css/main.css"></style>
 </head>
 
+<style>
+body {
+  padding-top: 50px;
+  background-color: #FFC02D;
+}
+
+p {
+  font-size: 18px;
+}
+</style>
+
 <div id="content">
   <section id="prompt">
-    <p>
-      Given the following array:
-    </p>
-    <%= @coder.array %>
-    <p>
-      How many numbers in this array are divisible by <b><%= @coder.divisor %></b>
-    </p>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <p>
+          Given the following array:
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <%= @coder.array %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <p>
+          How many numbers in this array are divisible by <b><%= @coder.divisor %></b>
+        </p>
+      </div>
+    </div>
   </section>
 
   <section id="challenge">
